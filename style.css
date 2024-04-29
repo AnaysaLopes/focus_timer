@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root { 
+    --color-primary: #48484c;
+    --bg-color: hsl(0, 0%, 100%);
+    --color-hover: hsl(185, 34%, 55%);
+    font-size: clamp(40%, 1% +2vw, 62.5%)
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--color-primary);
+
+    display: grid;
+    height: 100vh;
+    place-content: center;
+    padding: 12rem 14rem 11rem 14rem;
+
+}
+
+main {
+    display: flex;
+    max-width: 82.1rem;
+    height: 100vh;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+
+.flex{
+    display: flex;
+}
+
+
+#counter {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    width: 20rem;
+    height: 1.3rem;
+}
+
+#timer {
+    color: var(--color-primary);
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 7rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+#controls {
+    margin-top: 1rem;
+    padding: 2.2rem 4rem;
+    gap: 1.8rem;
+}
+
+#controls button:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease;
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    color: var(--color-primary);
+
+    cursor: pointer;
+
+    font-size: 3rem;
+}
+
+button:hover {
+    color: var(--color-hover);
+}
+
+#sounds {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.sound {
+    width: 8rem;
+    height: 9rem;
+    background: #adadaf;
+    border-radius: 1.5rem;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.sound:hover, .sound.active {
+    background: var(--color-hover);
+    transform: scale(1.1);
+}
+
+.sound:hover svg path , .sound.active svg path{
+    fill: #dfdfe4;
+}
+
